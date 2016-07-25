@@ -1,0 +1,5 @@
+Pick user to log in<br>
+<%= form_tag("/login", method: "post") do %>
+  <%= select "user", "id", @users.collect {|u| [ u.name, u.id ] } %>
+  <%= submit_tag "Sign In" %>
+<% end %>
