@@ -4,21 +4,22 @@ class Ride < ActiveRecord::Base
   belongs_to :user
 
   def take_ride
-    message = ""
+    denial_message = ""
     if user.tickets < attraction.tickets
-      message += "Sorry. You do not have enough tickets the #{attraction.name}."
+      denial_message += "Sorry. You do not have enough tickets the #{attraction.name}."
     end
     if user.height < attraction.min_height
-      message += (message == "" ? "Sorry." : "") + " You are not tall enough to ride the #{attraction.name}."
+      denial_message += (denial_message == "" ? "Sorry." : "") + " You are not tall enough to ride the #{attraction.name}."
     end
     
-    if message == ""
+    if denial_message == ""
       user.tickets -= attraction.tickets
       user.nausea += attraction.nausea_rating
       user.happiness += attraction.happiness_rating
       user.save
+      "Thanks for riding the #{attraction.name}!"
     else
-      message
+      denial_message
     end
   end
 end
