@@ -1,0 +1,8 @@
+<%= link_to "Log Out", logout_user_path %> <br>
+<% if @message %>
+  <p><%= @message %></p>
+<% end %>
+
+<%= render 'user', user: @user %> <br>
+
+<%= link_to "See attractions", attractions_path %> <br>
