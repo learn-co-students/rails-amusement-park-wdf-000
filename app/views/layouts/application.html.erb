@@ -20,6 +20,11 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" href="<%= new_session_url %>"/>Sign in</a>
+	<%= link_to "Sign in", new_session_path %>
+	<%= link_to "Sign up", new_user_path %>
+	<%= link_to "See attractions", attractions_path %>
+	<%= link_to "Log Out", destroy_session_path, :method => :delete %>	
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -28,6 +33,9 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
 
     <!-- content -->
     <div class="container"  role="main">

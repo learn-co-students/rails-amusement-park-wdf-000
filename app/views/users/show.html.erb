@@ -1,0 +1,11 @@
+<h1><%= @user.name %></h1>
+<h3>User Info</h3>
+<% if @user.admin %>
+  <h5>ADMIN</h5>
+<% end %>
+<% @user.attributes.keys.each do |attribute| %>
+  <label><%= attribute.to_s.capitalize + ":" %></label>
+  <p><%= @user.send(attribute) %></p>
+<% end %>
+<label>Mood</label>
+<p><%= @user.mood %></p>
