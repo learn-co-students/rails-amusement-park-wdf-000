@@ -1,0 +1,15 @@
+<h1>Attractions#index</h1>
+<p>Find me in app/views/attractions/index.html.erb</p>
+
+<% if User.find(session[:user_id]).admin? %>
+<%= link_to 'New Attraction', new_attraction_path %>
+<% end %>
+
+<% @attractions.each do |a| %>
+<h2><%= a.name %> </h2><br>
+<% if User.find(session[:user_id]).admin? %>
+<%= link_to "Show #{a.name}", attraction_path(a) %> <br>
+<% else %>
+<%= link_to "Go on #{a.name}", attraction_path(a)%> <br>
+<% end %>
+<% end %>

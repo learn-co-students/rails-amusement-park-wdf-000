@@ -1,0 +1,12 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<%= flash[:alert] if flash[:alert] %> 
+
+Name: <%= @user.name %>
+Mood: <%= @user.mood %>
+Tickets: <%= @user.tickets %>
+Height: <%= @user.height %>
+
+
+<%= link_to 'See attractions', attractions_path %>
