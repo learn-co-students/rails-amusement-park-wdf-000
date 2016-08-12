@@ -1,0 +1,9 @@
+<h1>Users#login</h1>
+<p>Find me in app/views/users/login.html.erb</p>
+
+<%= form_for User.new, :as => :user, :url => login_path, method: 'post' do |f| %>
+<%= f.collection_select(:id, User.all, :id, :name) %> <br>
+<%= f.label 'Password' %>
+<%= f.text_field :password %> <br>
+<%= f.submit 'Sign In' %>
+<% end %>
