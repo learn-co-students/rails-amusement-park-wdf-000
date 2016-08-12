@@ -1,0 +1,10 @@
+
+<div class="field">
+<label for="user_name">Select your name</label>
+<br>
+<%= form_tag(signin_path, action: :create) do %>
+<p><%= collection_select :user, :id, User.all, :id, :name, :prompt => true %></p>
+<%= submit_tag "Sign In" %>
+<% end %>
+</div>
+

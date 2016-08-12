@@ -1,0 +1,28 @@
+
+<div class="center">
+  <div class="pic">
+    <img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" height="250">
+  </div>
+
+  <div class="info">
+    <p><strong>Name:</strong> <%= @attraction.name %></p>
+    <p><strong>Total Number of Users:</strong> <%= @attraction.users.size %></p>
+    <p><strong>Ticket Requirement:</strong> <%= @attraction.tickets %></p>
+    <p><strong>Height Requirement:</strong> <%= @attraction.min_height %> inches</p>
+    <p><strong>Nausea Rating:</strong> <%= @attraction.nausea_rating %></p>
+    <p><strong>Happiness Rating:</strong> <%= @attraction.happiness_rating %></p>
+    <% if @user.admin %>
+      <%= link_to "<button>Edit Attraction</button>".html_safe, edit_attraction_path %>
+    <% else %> 
+      <%= form_tag(rides_path, method: :post) do %>
+        <%= hidden_field_tag("user_id", @user.id) %>
+        <%= hidden_field_tag("attraction_id", @attraction.id) %>
+        <%= submit_tag "Go on this ride" %>
+      <% end %>
+    <% end %>  
+    <a href="/attractions">Back</a><p></p>
+  </div>
+</div>
+
+
+ 
