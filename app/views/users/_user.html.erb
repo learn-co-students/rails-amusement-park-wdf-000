@@ -1,0 +1,22 @@
+<h1>User Information</h1>
+
+<% if @user && @user.admin %>
+  <%= link_to "New Attraction", new_attraction_path   %>
+<% end %>
+
+<h3><%= link_to "Log Out", user_path(user), method: :delete %></h3>
+<h2>Name: 
+<%= user.name %></h2> 
+<h2>Height: 
+<%= user.height %></h2>
+<h2>Happiness: 
+<%= user.happiness %></h2>
+<h2>Nausea: 
+<%= user.nausea %></h2>
+<h2>Tickets: 
+<%= user.tickets %></h2>
+<h2>Mood: 
+<%= user.mood %></h2>
+<% if user.admin %>
+  <h2>ADMIN</h2> 
+<% end %>
