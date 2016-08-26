@@ -1,0 +1,8 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<%= render :partial => "attraction", :locals => { :attraction => @attraction } %>
+
+<%# <form method="get" action="" > %>
+<%#     <button type="submit">Go on this ride</button> %>
+<%# </form> %>

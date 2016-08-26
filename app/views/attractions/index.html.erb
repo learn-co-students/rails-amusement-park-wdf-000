@@ -1,0 +1,9 @@
+<h1>Attractions</h1>
+<%# <% binding.pry %1> %>
+<% if session[:user_id] && User.find(session[:user_id]).admin? %>
+<%= link_to 'New Attraction', new_attraction_path %>
+<% end %>
+<%# <% if @user && @user.admin %1> %>
+<%#   <%= link_to "New Attraction", new_attraction_path   %1> %>
+<%# <% end %1> %>
+<%= render(@attractions) || "There are no attractions" %>

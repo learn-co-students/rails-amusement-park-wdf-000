@@ -1,0 +1,6 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<%= render :partial => "user", :locals => { :user => @user } %>
+<br />
+<%= link_to "See attractions", attractions_path %>

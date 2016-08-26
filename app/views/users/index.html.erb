@@ -1,0 +1,12 @@
+<% if @user  %>
+  <%= link_to "Log Out", user_path(session[:user_id]), method: :delete %>
+<% else %>
+  <%= link_to "Sign up", new_user_path %>
+  <%= link_to "Sign in", signin_path %>
+<% end %>
+
+<%# <%= binding.pry %1> %>
+<% if @user && @user.admin %>
+  <h1>New Attraction</h1>
+  <%= link_to "New Attraction", new_attraction_path   %>
+<% end %>
