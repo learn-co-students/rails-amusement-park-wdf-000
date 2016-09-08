@@ -4,13 +4,8 @@ Name: <%= @user.name %>
 <% if  @user.admin == true %>
     <%= link_to "See attractions", attractions_path %>
 <% else %>
-  <% if @user.happiness > @user.nausea %>
     <br>
-  <%= "Mood: happy" %> 
-  <% else %>
-    <br>
-  <%= "Mood: sad" %> 
-  <% end %>
+  Mood: <%= @user.mood %>
     <br>
   Tickets: <%= @user.tickets %>
     <br>

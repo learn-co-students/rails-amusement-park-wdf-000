@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :attractions, through: :rides 
   
 #   validates :name, presence: true
-  # validates :password,:presence=>true,:length=>{:minimum=>6},:on=>:create
+  validates :password,:presence=>true,:length=>{:minimum=>6},:on=>:create
 
   def mood
     if nausea > happiness
