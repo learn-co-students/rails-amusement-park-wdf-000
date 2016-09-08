@@ -1,0 +1,6 @@
+<h2>Sign in</h2>
+
+<%= form_tag(signin_path, action: :create) do %>
+<p><%= collection_select :user, :id, User.all, :id, :name, :prompt => true %></p>
+<%= submit_tag "Sign In" %>
+<% end %>

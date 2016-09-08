@@ -1,0 +1,19 @@
+
+    <br>
+Name: <%= @user.name %>
+<% if  @user.admin == true %>
+    <%= link_to "See attractions", attractions_path %>
+<% else %>
+  <% if @user.happiness > @user.nausea %>
+    <br>
+  <%= "Mood: happy" %> 
+  <% else %>
+    <br>
+  <%= "Mood: sad" %> 
+  <% end %>
+    <br>
+  Tickets: <%= @user.tickets %>
+    <br>
+  Height: <%= @user.height %>
+  <%= link_to "See attractions", attractions_path %>
+<% end %>

@@ -1,0 +1,21 @@
+New Attraction
+<% if @user.admin == true %>
+  <%# <%= render partial: "attraction", locals: { attraction: @attractionnew } %1> %>
+  <%= link_to "New Attraction", new_attraction_path %>
+<% end %>
+<ul>
+  <% @attractions.each do |attraction| %>
+  <br/>
+  <strong> <%= attraction.name %> </strong>
+  <% if @user.admin == true %>
+    <%= link_to "Show #{attraction.name}", attraction_path(attraction) %>
+  <% else %>
+    <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+  <% end %>
+  <p>Ticket req: <%= attraction.tickets %> </p>
+  <p>Total number of Users: <%= attraction.users.count %> </p>
+  <p>Nausea Rating: <%= attraction.nausea_rating %> </p>
+  <p>Min Height: <%= attraction.min_height %> </p>
+  <% end %>
+</ul>
+
