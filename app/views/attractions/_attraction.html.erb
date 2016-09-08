@@ -1,0 +1,25 @@
+<%# <%= form_for attraction, :url => { :action => "create", :controller => "attractions"}, :html => { :method => "post"} do |f| %1> %>
+<%= form_for attraction do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%# <%= f.label :tickets %1> %>
+
+  <%# <%= f.select(:tickets, [], {}, :style => "width:70px") %1> %>
+
+  <%= f.label "Minimum Height" %>
+
+  <%= f.text_field :min_height %>
+  <%= f.label :nausea_rating %>
+  <%= f.text_field :nausea_rating %> 
+  <%= f.select(:nausea_rating, [1,2,3,4,5], {}, :style => "width:70px") %>
+  <%= f.label :happiness_rating %>
+  <%= f.text_field :happiness_rating %>
+  <%= f.label "Tickets" %>
+  <%= f.text_field :tickets %>
+
+  <%# <%= f.select(:happiness_rating, [1,2,3,4,5], {}, :style => "width:70px") %1> %>
+  <%= f.submit %>
+<% end %>
+
+
+

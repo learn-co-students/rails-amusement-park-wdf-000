@@ -1,0 +1,17 @@
+<br>
+<strong> Name:<%= @attraction.name %> </strong>
+  <p>Ticket req: <%= @attraction.tickets %> </p>
+  <p>Total number of Users: <%= @attraction.users.count %> </p>
+  <p>Nausea Rating: <%= @attraction.nausea_rating %> </p>
+  <p>Min Height: <%= @attraction.min_height %> </p>
+<%= link_to "", new_ride_path, class: 'button' %>
+
+<%= button_to 'Go on this ride', {:controller => "rides",:action => "create", :attraction_id => @attraction.id } %>
+
+<%= link_to "Back", attractions_path %>
+
+<% if @user.admin == true %>
+    <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
+<%# <% binding.pry %1> %>
+<%#   <%= render partial: "attraction", locals: { attraction: @attraction } %1> %>
+<% end %>
