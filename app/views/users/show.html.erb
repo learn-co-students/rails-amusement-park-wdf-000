@@ -1,0 +1,8 @@
+<% if @user %>
+<h3><%= @user.name %> <%= '(ADMIN)' if @user.admin %></h3>
+<h4>Mood: <%= @user.mood %></h4>
+<h4>Height: <%= @user.height %></h4>
+<h4>Tickets: <%= @user.tickets %></h4>
+<% else %>
+<%= 'User not found' %>
+<% end %>

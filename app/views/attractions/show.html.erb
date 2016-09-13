@@ -1,0 +1,20 @@
+<% if @attraction %>
+<h3><%= @attraction.name %></h3>
+<h4>Nausea: <%= @attraction.nausea_rating %></h4>
+<h4>Happiness: <%= @attraction.happiness_rating %></h4>
+<h4>Height: <%= @attraction.min_height %></h4>
+<h4>Tickets: <%= @attraction.tickets %></h4>
+<% else %>
+<%= 'Attraction not found' %>
+<% end %>
+
+<% if @current_user.admin %>
+  <%= link_to "Edit Attraction", edit_attraction_path %>
+<% else %>
+<%= form_for Ride.new do |f| %>
+  <%= f.hidden_field :attraction_id, value: @attraction.id %>
+  <%= f.hidden_field :user_id, value: @current_user.id %>
+  <%= f.submit "Go on this ride" %>
+<% end %>
+
+<% end %>

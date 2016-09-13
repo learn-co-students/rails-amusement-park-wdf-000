@@ -1,0 +1,10 @@
+<%= form_for @user  do |f| %>
+  <%= f.text_field :name, placeholder: 'name' %><br><br>
+  <%= f.text_field :password, placeholder: 'password' %><br><br>
+  <%= f.number_field :tickets, placeholder: 'tickets' %><br><br>
+  <%= f.number_field :nausea, placeholder: 'nausea' %><br><br>
+  <%= f.number_field :happiness, placeholder: 'happiness' %><br><br>
+  <%= f.number_field :height, placeholder: 'height' %><br><br>
+  <%= f.check_box :admin, value: true %>admin?<br><br>
+  <%= f.submit "Create User" %>
+<% end %>
