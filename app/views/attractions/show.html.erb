@@ -1,0 +1,12 @@
+<h2> Attraction Details </h2>
+
+
+<%= render partial: "/layouts/model_printer", locals: {model: @attraction} %> <br>
+
+<%= (link_to "Edit Attraction", edit_attraction_path(@attraction)) if current_user.admin? %>
+<%= (link_to "Delete", attraction_path(@attraction), method: :delete) if current_user.admin? %> <br>
+
+<% if !current_user.admin? %>
+  <%= button_to "Go on this ride", {controller: :rides, action: "create"},
+  method: :post, params: {user_id: current_user.id, attraction_id: @attraction.id} %>
+<% end %>
