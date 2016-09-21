@@ -1,7 +1,7 @@
-<%= @user.name %> <br>
+<h3>User Details</h3>
+<%= "ADMIN" if @user.admin? %><br><br>
 
+<%= render partial: "/layouts/model_printer", locals: {model: @user} %> <br>
 Mood: <%= @user.mood %> <br>
-Tickets: <%= @user.tickets %> <br>
-Height: <%= @user.height %> inches <br>
-Nausea: <%= @user.nausea %> <br>
-<%= "ADMIN" if @user.admin? %>
+
+<%= link_to "Edit User", edit_user_path(@user) %>

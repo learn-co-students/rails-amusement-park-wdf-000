@@ -1,0 +1,5 @@
+<% variable_lister(model).each do |item, value| %>
+  <% unless item == "password_digest" || item == "admin" %>
+    <%= "#{variable_formatter(item)}" %>: <%= "#{value}" %> <br>
+  <% end %>
+<% end %>
