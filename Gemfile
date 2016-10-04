@@ -24,7 +24,7 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'byebug'
 # Use unicorn as the app server
 # gem 'unicorn'
 
@@ -50,7 +50,7 @@ group :test, :development do
 end
 
 group :production do
-  gem "pg"
+  # gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
 end

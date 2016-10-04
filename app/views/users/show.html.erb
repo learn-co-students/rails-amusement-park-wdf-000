@@ -1,0 +1,14 @@
+<%= flash[:alert] %>
+<h3>Welcome to the theme park!</h3>
+
+Name: <%= @user.name %><br />
+<%= "ADMIN" if @user.admin %>
+Tickets: <%= @user.tickets %><br />
+Mood: <%= @user.mood %><br />
+Height: <%= @user.height %><br />
+<br />
+Edit
+<br />
+<%= link_to "See attractions", attractions_path %>
+<br />
+<%= link_to "Log Out", user_path(@user), method: :delete %>

@@ -1,0 +1,6 @@
+<strong>Select your name</strong>
+<%= form_for :user do |f| %>
+  <br /><%= f.collection_select :id, @users, :id, :name %><br />
+  <br />
+  <%= f.submit "Sign In" %>
+<% end %>
