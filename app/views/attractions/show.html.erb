@@ -1,0 +1,2 @@
+<%= @attraction.name %>
+<%= button_to 'Go on this ride', user_path(session[:user_id]), method: :patch, params: {attraction_id: @attraction.id } %>

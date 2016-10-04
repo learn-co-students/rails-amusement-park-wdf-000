@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find_by(id: params[:id])
+    @attraction = Attraction.find_by(id: params[:attraction_id])
+    @user.rides.find_or_create_by(user: @user, attraction: @attraction)
+    flash[:alert] = @user.rides.last.take_ride
+    @user.save
+    redirect_to user_path @user
   end
 
   def destroy

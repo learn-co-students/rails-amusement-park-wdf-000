@@ -1,0 +1,8 @@
+<h1>Sign In</h1>
+<hr />
+
+<%= form_for @user, url: signin_path do |f| %>
+  <%= f.label :name, 'Select your name' %>
+  <%= f.collection_select :id, User.all, :id, :name %>
+  <%= f.submit 'Sign In', class: "btn btn-primary" %>
+<% end %>
