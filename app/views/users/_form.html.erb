@@ -1,0 +1,25 @@
+<%= form_for @user do |f| %>
+  <%= f.label :name %> <br />
+  <%= f.text_field :name %> <br />
+
+  <%= f.label :password %> <br />
+  <%= f.text_field :password %> <br />
+
+  <%= f.label :height %> (in inches) <br />
+  <%= f.number_field :height %> <br />
+
+  <%= f.label :happiness %> (1 - 5 scale) <br />
+  <%= f.number_field :happiness %> <br />
+
+  <%= f.label :nausea %> (1 - 5 scale) <br />
+  <%= f.number_field :nausea %> <br />
+
+  <%= f.label :tickets %> you possess <br />
+  <%= f.number_field :tickets %> <br />
+
+  <% f.label :admin %> (Check if you're an owner or admin) 
+  <%= f.check_box :admin %> <br />
+
+  <br />
+  <%= f.submit 'Create User', class: "btn btn-primary" %>
+<% end %>
