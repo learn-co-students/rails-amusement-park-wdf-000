@@ -1,7 +1,7 @@
-<%= form_for user, url: '/signin', class: 'form-horizontal' do |f| %>
+<%= form_tag('/signin', method: 'post', class: 'form-horizontal') do %>
   <div class="form-group">
-    <%= f.label "Select your name:" %><br>
-    <%= f.collection_select :id, User.all, :id, :name, { prompt: true }, class: 'form-control'  %><br>
-    <%= f.submit class: 'btn btn-primary' %>  
+    <%= label_tag "Select your name:" %><br>
+    <%= collection_select(:user, :id, User.all, :id, :name, { prompt: true }, class: 'form-control') %><br>
+    <%= button_tag 'Sign In', class: 'btn btn-primary' %>
   </div>
 <% end %>
