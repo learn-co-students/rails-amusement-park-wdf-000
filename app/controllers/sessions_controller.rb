@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    return redirect_to :back if user_params[:id].blank?
+    return redirect_to :back, alert: 'Make a selection' if user_params[:id].blank?
     session[:user_id] = user_params[:id]
     redirect_to user_path(session[:id])
   end
