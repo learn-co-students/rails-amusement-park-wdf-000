@@ -1,5 +1,9 @@
-<p> User Name: <%= @user.name %> </p>
-<p> Mood: <%= @user.mood %> </p>
-<p> Tickets: <%= @user.tickets %></p>
-<p> Height: <%= @user.height %></p>
-
+<% if @user.admin %>
+  <p>User Name: <%= @user.name %></p>
+  <p><strong>ADMIN</strong></p>
+<% else %>
+  <p> User Name: <%= @user.name %> </p>
+  <p> Mood: <%= @user.mood %> </p>
+  <p> Tickets: <%= @user.tickets %></p>
+  <p> Height: <%= @user.height %></p>
+<% end %>
