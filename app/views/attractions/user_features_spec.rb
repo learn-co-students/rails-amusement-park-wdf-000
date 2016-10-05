@@ -24,7 +24,7 @@ describe 'Feature Test: User Signup', :type => :feature do
     admin_signup
   end
 
-  it "on sign up for admin, successfully adds a session hash" do
+  it "on sign up for admin, successfully adds a session hash" do 
     admin_signup
     expect(page.get_rack_session_key('user_id')).to_not be_nil
   end
@@ -79,7 +79,7 @@ end
 
 describe 'Feature Test: Go on a Ride', :type => :feature do
 
-  before :each do
+  before :each do 
     @rollercoaster = Attraction.create(
       :name => "Roller Coaster",
       :tickets => 5,
@@ -154,7 +154,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     expect(page).to have_button("Go on this ride")
   end
 
-  it "clicking on 'Go on this ride' redirects to user show page" do
+  it "clicking on 'Go on ride' redirects to user show page" do
     click_link('See attractions')
     click_link("Go on #{@ferriswheel.name}")
     click_button("Go on this ride")
@@ -216,7 +216,7 @@ end
 
 describe 'Feature Test: Admin Flow', :type => :feature do
 
-  before :each do
+  before :each do 
     @rollercoaster = Attraction.create(
       :name => "Roller Coaster",
       :tickets => 5,
