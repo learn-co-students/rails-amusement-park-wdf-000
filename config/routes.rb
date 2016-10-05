@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'welcome#home'
 
   get '/signin', to: 'sessions#new'
@@ -13,4 +14,6 @@ Rails.application.routes.draw do
   post '/users/:id/destroy', to: 'users#destroy'
 
   resources :attractions
+
+  post '/rides', to: 'rides#create'
 end
