@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
 
-  get '/users/new', to: 'users#new', as: 'users'
-  post '/users/new', to: 'users#create'
+  post '/users', to: 'users#create'
+  get '/users/new', to: 'users#new', as: 'new_user'
+  get '/users/:id/edit', to: 'users#edit', as: :edit_user
   get '/users/:id', to: 'users#show', as: :user
-  get '/users/:id/edit', to: 'users#edit', as: :user_edit
   post '/users/:id/edit', to: 'users#update'
   post '/users/:id/destroy', to: 'users#destroy'
 
