@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav">
        <% if logged_in? %>
          <li><a href="<%= user_path(current_user_id) %>">Hello, <%= current_user_name %>!</a></li>
-         <li><a href="">Attractions</a></li>
+         <li><a href="<%= attractions_path %>">See attractions</a></li>
          <li><a href="<%= signout_path %>">Log Out</a></li>
         <% else %>
         <li><a href="<%= new_user_path %>">Sign Up</a></li>
