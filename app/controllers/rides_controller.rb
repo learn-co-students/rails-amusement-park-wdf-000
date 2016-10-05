@@ -1,11 +1,18 @@
 class RidesController < ApplicationController
   def create
-    raise "stop".inspect
+    ride = Ride.new(ride_params)
+    result = ride.take_ride
+    if result.class == String
+      redirect_to user_path(current_user_id), alert: result
+    else
+      redirect_to user_path(current_user_id), notice: "Thanks for riding the #{Attraction.find(ride_params[:attraction_id]).name}!"
+    end
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(:id)
+  # is this safe?
+  def ride_params
+    params.permit(:user_id, :attraction_id)
   end
 end
