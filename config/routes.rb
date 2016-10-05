@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: :user_edit
   post '/users/:id/edit', to: 'users#update'
   post '/users/:id/destroy', to: 'users#destroy'
+
+  resources :attractions
 end
