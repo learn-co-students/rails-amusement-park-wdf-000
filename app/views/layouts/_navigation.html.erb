@@ -11,7 +11,14 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-       <!--  nav here -->
+       <% if logged_in? %>
+         <li><a href="<%= user_path(current_user_id) %>">Hello, <%= current_user_name %>!</a></li>
+         <li><a href="">Attractions</a></li>
+         <li><a href="<%= signout_path %>">Log Out</a></li>
+        <% else %>
+        <li><a href="<%= users_new_path %>">Sign Up</a></li>
+        <li><a href="<%= signin_path %>">Sign In</a></li>
+       <% end %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
