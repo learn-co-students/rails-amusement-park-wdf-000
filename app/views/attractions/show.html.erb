@@ -1,2 +1,15 @@
-<h1>Attractions#show</h1>
-<p>Find me in app/views/attractions/show.html.erb</p>
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" class="img-responsive img-thumbnail">
+    </div>
+    <div class="col-md-6 info">
+      <p>Name: <%= @attraction.name %></p>
+      <p>Total Number of Users: <%= @attraction.users.count %></p>
+      <p>Ticket Requirement: <%= @attraction.tickets %></p>
+      <p>Height Requirement: <%= @attraction.min_height %></p>
+      <p>Nausea Rating: <%= @attraction.nausea_rating %></p>
+      <p>Happiness Rating: <%= @attraction.happiness_rating %></p>
+    </div>
+  </div>
+</div>
