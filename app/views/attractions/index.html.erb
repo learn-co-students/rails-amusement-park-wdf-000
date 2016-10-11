@@ -1,0 +1,10 @@
+<% @attractions.each do |a| %>
+ <p>
+ <%= a.name %>
+ <% if @user.admin %>
+ <%= link_to "Show #{a.name}", attraction_path(a), class: "btn btn-primary" %>
+ <% else %>
+ <%= link_to "Go on #{a.name}", attraction_path(a), class: "btn btn-primary" %>
+ <% end %>
+ </p>
+ <%end %>
