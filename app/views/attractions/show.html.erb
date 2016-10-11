@@ -1,0 +1,26 @@
+<div class="info">
+  <p><strong>Name: </strong><%= @attraction.name %></p>
+  <p><strong>Total Number of Users: </strong><%= @attraction.users.count %></p>
+  <P><strong>Ticket Requirement: </strong><%= @attraction.tickets %></P>
+  <p><strong>Height Requirements: </strong><%= @attraction.min_height %> inches</p>
+  <p><strong>Nausea Rating: </strong><%= @attraction.nausea_rating %></p>
+  <p><strong>Happiness Rating: </strong><%= @attraction.happiness_rating %></p>
+
+  <% if current_user.admin %>
+    <%= link_to 'Edit Attraction', edit_attraction_path %>
+  <% else %>
+    <%# <form action ="/rides" method = "post" > %>
+    <%#   <%= hidden_field_tag :authenticity_token, form_authenticity_token %1> %>
+    <%#   <%= hidden_field_tag :attraction_id, value: @attraction.id %1> %>
+    <%#   <%= hidden_field_tag :user_id, value: current_user.id %1> %>
+    <%#   <input type="submit" value="Go on this ride" %1> %>
+  
+    <%= form_for Ride.new do |f| %>
+    <%= f.hidden_field :attraction_id, value: @attraction.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "Go on this ride" %>
+    <% end %>
+  <% end %>
+
+  <%= link_to "Back", attractions_path %>
+</div>
