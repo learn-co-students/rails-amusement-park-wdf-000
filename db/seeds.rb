@@ -1,16 +1,16 @@
 DATA = {
   :user_keys => 
-    ["name", "nausea", "happiness", "tickets", "height"],
+    ["name", "password", "nausea", "happiness", "tickets", "height"],
   :users => [
-    ["Max Charles", 0, 3, 6, 32],
-    ["Skai Jackson", 1, 3, 10, 60],
-    ["Kaleo Elam", 1, 2, 15, 59],
-    ["Megan Charpentier", 3, 1, 12, 60],
-    ["Hayden Byerly", 1, 1, 16, 58],
-    ["Tenzing Norgay Trainor", 0, 1, 10, 55],
-    ["Davis Cleveland", 1, 3, 5, 36],
-    ["Cole Sand", 2, 2, 7, 34],
-    ["Quvenzhané Wallis", 2, 2, 13, 30]
+    ["Max Charles", "password", 0, 3, 6, 32],
+    ["Skai Jackson", "password", 1, 3, 10, 60],
+    ["Kaleo Elam", "password", 1, 2, 15, 59],
+    ["Megan Charpentier", "password", 3, 1, 12, 60],
+    ["Hayden Byerly", "password", 1, 1, 16, 58],
+    ["Tenzing Norgay Trainor", "password", 0, 1, 10, 55],
+    ["Davis Cleveland", "password", 1, 3, 5, 36],
+    ["Cole Sand", "password", 2, 2, 7, 34],
+    ["Quvenzhané Wallis", "password", 2, 2, 13, 30]
   ],
   :attraction_keys =>
    ["name", "nausea_rating", "happiness_rating", "tickets", "min_height"],
