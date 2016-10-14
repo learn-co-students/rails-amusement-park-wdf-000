@@ -1,0 +1,10 @@
+<% if @user.admin? %>
+<% @attractions.each do |a| %>
+  <h3><a href="attractions/<%=a.id%>">Show <%=a.name%></a></h3>
+<% end %>
+<h3><a href="attractions/new">New Attraction</a></h3>
+<%else%>
+<% @attractions.each do |a| %>
+  <h3>Go on <a href="attractions/<%=a.id%>">Go on <%=a.name%></a></h3>
+<% end %>
+<% end %>

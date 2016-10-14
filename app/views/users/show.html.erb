@@ -1,0 +1,17 @@
+
+
+<% if @user.admin? %>
+<h3>ADMIN: <%=@user.name%></h3>
+<%else %>
+<%=@user.name%>
+<br>
+<h3>Mood: <%=@user.mood%></h3>
+<br>
+<h3>Tickets: <%= @user.tickets %></h3>
+<br>
+<%= @user.height %>
+
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+<% end %>

@@ -31,6 +31,16 @@
 
     <!-- content -->
     <div class="container"  role="main">
+      <% if session[:user_id] != nil %>
+      <%= link_to("Log Out", logout_path) %>
+      <br>
+      <%= link_to("See attractions", attractions_path) %>
+      <br>
+      <% else %>
+      <%= link_to("Sign in", signin_path) %>
+      <br>
+      <%= link_to("Sign up", new_user_path) %>
+      <% end %>
       <%= yield %>
     </div>
 
