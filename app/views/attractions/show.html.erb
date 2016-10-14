@@ -1,0 +1,9 @@
+<%=@attraction.name %>
+
+<form method="get" action="/users/<%=@user.id%>">
+  <input type="submit" name="name" value="Go on this ride">
+</form>
+
+<% if @user.admin? %>
+  <h3><a href="<%=@attraction.id%>/edit">Edit Attraction</a></h3>
+<% end %>
