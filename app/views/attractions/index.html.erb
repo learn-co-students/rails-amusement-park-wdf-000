@@ -1,0 +1,20 @@
+
+
+
+New Attraction
+<%= link_to "New Attraction", new_attraction_path%>
+
+<% if current_user.admin %>
+    <% @attractions.each do |ride| %>
+    <%= link_to "Show #{ride.name}", attraction_path(ride) %>
+  <%end%>
+<%end%>
+
+
+
+
+<% if current_user.admin == false %>
+  <% @attractions.each do |ride| %>
+  <%= link_to "Go on #{ride.name}", attraction_path(ride)%>
+  <%end%>
+<%end%>
