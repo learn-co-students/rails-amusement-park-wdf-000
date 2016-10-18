@@ -1,16 +1,16 @@
 DATA = {
-  :user_keys => 
-    ["name", "nausea", "happiness", "tickets", "height"],
+  :user_keys =>
+    ["name", "nausea", "happiness", "tickets", "height", "password"],
   :users => [
-    ["Max Charles", 0, 3, 6, 32],
-    ["Skai Jackson", 1, 3, 10, 60],
-    ["Kaleo Elam", 1, 2, 15, 59],
-    ["Megan Charpentier", 3, 1, 12, 60],
-    ["Hayden Byerly", 1, 1, 16, 58],
-    ["Tenzing Norgay Trainor", 0, 1, 10, 55],
-    ["Davis Cleveland", 1, 3, 5, 36],
-    ["Cole Sand", 2, 2, 7, 34],
-    ["Quvenzhané Wallis", 2, 2, 13, 30]
+    ["Max Charles", 0, 3, 6, 32, "dolphins64"],
+    ["Skai Jackson", 1, 3, 10, 60, "dolphins64"],
+    ["Kaleo Elam", 1, 2, 15, 59, "dolphins64"],
+    ["Megan Charpentier", 3, 1, 12, 60, "dolphins64"],
+    ["Hayden Byerly", 1, 1, 16, 58, "dolphins64"],
+    ["Tenzing Norgay Trainor", 0, 1, 10, 55, "dolphins64"],
+    ["Davis Cleveland", 1, 3, 5, 36, "dolphins64"],
+    ["Cole Sand", 2, 2, 7, 34, "dolphins64"],
+    ["Quvenzhané Wallis", 2, 2, 13, 30, "dolphins64"]
   ],
   :attraction_keys =>
    ["name", "nausea_rating", "happiness_rating", "tickets", "min_height"],
@@ -43,6 +43,7 @@ def make_users
     user.each_with_index do |attribute, i|
       new_user.send(DATA[:user_keys][i]+"=", attribute)
     end
+    # binding.pry
     new_user.save
   end
 end
@@ -59,7 +60,7 @@ def make_attractions_and_rides
     attraction.each_with_index do |attribute, i|
       new_attraction.send(DATA[:attraction_keys][i] + "=", attribute)
     end
-    rand(1..8).times do 
+    rand(1..8).times do
       customers = []
       User.all.each {|u| customers << u if u.admin != true}
       new_attraction.users << customers[rand(0...customers.length)]

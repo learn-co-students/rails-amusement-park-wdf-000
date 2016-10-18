@@ -1,0 +1,9 @@
+<%= form_for @user, url: signin_path do |f| %>
+______________Sign In With a Name_______________
+<br></br>
+<%=f.collection_select :id, User.all, :id, :name %>
+
+
+<br></br>
+<%=f.submit "Sign In"%>
+<%end%>
