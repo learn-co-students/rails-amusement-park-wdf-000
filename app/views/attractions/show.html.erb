@@ -1,0 +1,9 @@
+
+<%= @attraction.name %>
+<% if !@user.admin %>
+<form  action="/users/<%=session[:user_id]%>" method="get">
+  <input type="hidden" name="attraction" value="<%=@attraction.id%>">
+<button type="submit" name="button">Go on this ride</button>
+ <% else %>
+   <%= link_to "Edit Attraction", attraction_edit_path %>
+<% end %>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Attraction, :type => :model do
-  before :each do 
+  before :each do
     @attraction = Attraction.create(
       :name => "Roller Coaster",
       :tickets => 5,
@@ -16,14 +16,14 @@ RSpec.describe Attraction, :type => :model do
   end
 
   it "has many rides" do
-    user = User.create(name: "Max Charles")
+    user = User.create(name: "Max Charles", password:"123dfaa")
     ride = Ride.create(user_id: user.id, attraction_id: @attraction.id)
     expect(@attraction.rides.first).to eq(ride)
   end
 
   it "has many users through rides" do
-    max = User.create(name: "Max Charles")
-    skai = User.create(name: "Skai Jackson")
+    max = User.create(name: "Max Charles",password:"123dfaa")
+    skai = User.create(name: "Skai Jackson",password:"123dfaa")
     @attraction.users << [max, skai]
     expect(@attraction.users.first).to eq(max)
     expect(@attraction.users.last).to eq(skai)

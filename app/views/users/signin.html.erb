@@ -1,0 +1,9 @@
+
+<form  action="/signin" method="post">
+  <select id ="user_id" name ="user[id]">
+    <% @users.each do |user |%>
+    <option value="<%=user.id%>"><%=user.name%></option>
+  <% end %>
+  </select>
+  <button type="submit" name="Sign In">Sign In</button>
+</form>

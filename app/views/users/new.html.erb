@@ -1,0 +1,12 @@
+<form  action="/users" method="post">
+  <input type="text" name="user[name]" >
+  <input type="text" name="user[height]" >
+  <input type="text" name="user[happiness]" >
+  <input type="text" name="user[nausea]" >
+  <input type="text" name="user[tickets]" >
+  <input type="text" name="user[password]">
+  <label for="user_admin">Check box if you are a theme park owner</label>
+  <input name="user[admin]" type="hidden" value="0">
+  <input id="user_admin" name="user[admin]" type="checkbox" value="1">
+  <button type="submit" name="Create User">Create User</button>
+</form>
