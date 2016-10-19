@@ -1,0 +1,22 @@
+<% if @attraction %>
+  <% if @attraction.min_height > @user.height %>
+  You are not tall enough to ride the <%=@attraction.name%>
+  <%else%>
+  Thanks for riding the <%=@attraction.name%>!
+  <%end%>
+  <% if @user.tickets < @attraction.tickets %>
+  You do not have enough tickets the <%=@attraction.name%>
+  <%end%>
+<%end%>
+
+<% if @user.admin %>
+  ADMIN
+<%end%>
+<%= @user.name %>
+happy: <%= @user.happiness %>
+Mood: <%= @user.nausea %>
+Tickets: <%= @user.tickets %>
+<%= @user.height %>
+
+
+sad
