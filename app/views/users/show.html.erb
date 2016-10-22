@@ -1,0 +1,11 @@
+<% if current_user.admin %>
+<h2>ADMIN</h2>
+<% end %>
+
+<p>Name: <%= current_user.name %></p>
+<p>Height: <%= current_user.height %></p>
+<p>Mood: <%= current_user.mood %></p>
+<p>Tickets: <%= current_user.tickets %></p>
+
+
+<a href="/attractions">See attractions</a>

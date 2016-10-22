@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.2'
 # Use Uglifier as compressor for JavaScript assets
@@ -45,7 +46,7 @@ group :test, :development do
   gem "simplecov"
   gem "database_cleaner"
   gem "sqlite3"
-  gem "pry"
+  gem "pry-rails"
   gem "rack_session_access"
 end
 
