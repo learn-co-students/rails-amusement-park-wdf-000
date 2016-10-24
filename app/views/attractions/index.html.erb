@@ -1,0 +1,8 @@
+<% @attractions.each do |attr| %>
+<%if  current_user.admin %>
+  <%= link_to "Show #{attr.name}", attr %>
+<% else %>
+  <%= link_to "Go on #{attr.name}", attr %>
+  <% end %>
+<% end %>
+
