@@ -24,6 +24,17 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
            <!--  nav here -->
+           <li><%= link_to 'Sign up', new_user_path %></li>
+           <li><%= link_to 'Sign in', signin_path %></li>
+           <% if session[:user_id] %>
+            <li><%= link_to "Log Out", signout_path, method: :delete %> </li>
+              <li><%= link_to "See attractions", attractions_path %></li>
+                  <% current_user = User.find(session[:user_id]) %>
+                  <% if current_user.admin %>
+                  <%= link_to "New Attraction", new_attraction_path %>
+                  <% end %>
+            <% end %>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
